@@ -8,13 +8,11 @@
 
 🚀 We introduce RILLIE, a general RNA foundation model that integrates sequence and structure information to evolve RNA in a zero-shot fashion. RILLIE integrates a large language model with an inverse folding model can generate functional RNA sequences aligning with natural evolutionary patterns at the sequence level while preserving the structural integrity of key functional regions. Using RILLIE, we successfully evolved two engineered RNA aptamers, Broccoli and Pepper, with a high success rate, low sequence similarity, improved binding affinity and fluorescence in live cell.
 
-![RILLIE Overview](./image/GerNA-Bind.jpg)
+![RILLIE Overview](./image/)
 
 ## 🗂 Contents
 
 - [Installation](#installation)
-- [Data Preparation](#data-preparation)
-- [Generate RNA Structure](#generate-rna-structure)
 - [Data Preparation](#data-preparation)
   - [Dataset Description](#dataset-description)
   - [Generate RNA Structure](#generate-rna-structure)
@@ -160,4 +158,4 @@ No Commercial use of either the model nor generated data, details to be found in
 
 ## Acknowledgements
 
-Our work builds upon [EquiFormer](https://github.com/atomicarchitects/equiformer), [Evidential Deep Learning](https://github.com/aamini/evidential-deep-learning), [MONN](https://github.com/lishuya17/MONN), [RNA-FM](https://github.com/ml4bio/RNA-FM), [RhoFold](https://github.com/ml4bio/RhoFold), and [TankBind](https://github.com/luwei0917/TankBind). Thanks for their excellent work and open-source contributions.
+Our work builds upon [AIDO.RNA](https://github.com/genbio-ai/AIDO), [RhoDesign](https://github.com/ml4bio/RhoDesign) [RhoFold](https://github.com/ml4bio/RhoFold) Thanks for their excellent work and open-source contributions.
