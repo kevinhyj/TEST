@@ -17,13 +17,12 @@
   - [Dataset Description](#dataset-description)
   - [Model Description](#model-description)
   - [Generate RNA Structure](#generate-rna-structure)
-  - [Data Processing](#data-processing)
-  - [Dataset Download](#dataset-download)
-- [Using GerNA-Bind](#using-gerna-bind)
-  - [Model Training](#model-training)
+  - [Zero-shot ncRNA fitness prediction](#data-processing)
+  - [High-fitness sensitivity analysis](#data-processing)
+- [Using RILLIE](#using-RILLIE)
   - [CheckPoints](#checkpoints)
-  - [RNA Small Molecule Screening](#rna-small-molecule-screening)
-  - [RNA Target Binding Site Prediction](#rna-target-binding-site-prediction)
+  - [General RNA Evolution](#general-rna-evolution)
+  - [Multi-Round Evolution (Optional)](#multi-round-evolution-(Optional))
 <!-- - [Citation](#citation) -->
 - [Acknowledgements](#acknowledgements)
 
@@ -114,7 +113,9 @@ Our benchmark includes following models:
   [RhoDesign](https://github.com/ml4bio/RhoDesign)
 
 ### Generate RNA Structure
-We use [RhoFold+](https://github.com/ml4bio/RhoFold) to generate RNA 3D Structure and [RNAfold](https://github.com/ViennaRNA/ViennaRNA/releases) (version: 2.5.1) to generate RNA 2D structure.
+We use [RhoFold](https://github.com/ml4bio/RhoFold) and [AlphaFold3](https://github.com/google-deepmind/alphafold3) to generate RNA 3D Structure 
+
+We use [Chai](https://github.com/chaidiscovery/chai-lab) to generate RNA 2D structure (as the input of RILLIE).
 
 ### Data Processing
 You can process data through the following steps:
@@ -126,12 +127,7 @@ And the processed data will be saved in ./data folder as "new_data.pkl" file.
 ### Dataset Download
 We process the processed data with Robin & Biosensor dataset. You can download the processed data from [Zenodo](https://zenodo.org/records/14808549).
 
-## Using GerNA-Bind
-### Model Training
-We provide the training scripts that you can train the model yourself.
-```bash
-python train_model.py --dataset Robin --split_method random --model_output_path Model/
-```
+## Using RILLIE
 
 ### CheckPoints
 Download the model weights and put into the "Model" folder, which contains the model checkpoint. You can direct run the scripts in ./Model folder to ger the model weights.
@@ -140,45 +136,17 @@ Download the model weights and put into the "Model" folder, which contains the m
 bash Model/get_weights.sh
 ```
 
-<!-- #### Process Data -->
-
-<!-- ```bash
-python test_model.py --checkpoint model_weight
-``` -->
-
-
-<!--
-
-In file included from RNA_wrap.cpp:764:
-/xcfhome/ypxia/anaconda3/envs/gernabind/lib/perl5/5.32/core_perl/CORE/perl.h:861:13: fatal error: xlocale.h: No such file or directory
-  861 | #   include <xlocale.h>
-      |             ^~~~~~~~~~~
-compilation terminated.
-make[3]: *** [Makefile:733: RNA_la-RNA_wrap.lo] Error 1
-make[3]: Leaving directory '/xcfhome/ypxia/resource/ViennaRNA-2.5.1/interfaces/Perl'
-make[2]: *** [Makefile:640: all-recursive] Error 1
-make[2]: Leaving directory '/xcfhome/ypxia/resource/ViennaRNA-2.5.1/interfaces'
-make[1]: *** [Makefile:688: all-recursive] Error 1
-make[1]: Leaving directory '/xcfhome/ypxia/resource/ViennaRNA-2.5.1'
-make: *** [Makefile:579: all] Error 2
-(gernabind) [ypxia@f146 ViennaRNA-2.5.1]$ ./configure --prefix=/xcfhome/ypxia/local/ViennaRNA-2.5.1 --disable-openmp --enable-universal-binary --enable-sse --with-python3 --without-perl
-
--->
-
-### RNA Small Molecule Screening
-You can use our model to screening small molecules which can binding target RNA.
-```bash
-python inference_affinity.py
-```
-
-
-<!-- First, you need to offer the .pdb file which include RNA pdb file and . -->
-### RNA Target Binding Site Prediction
+### General RNA Evolution
 Otherwise, you can also use our model to get RNA target binding sites prediction.
 You can run the file below, so that you can get the RNA_binding.csv about RNA.
 
 ```bash
 python inference_binding_site.py
+```
+### Multi-Round Evolution (Optional)
+Based on the wet-lab testing result, we can discarding harmful mutations to increase the success rate, while introducing new mutations to help direct evolution escape local optima and discover global optima.  This approach enables efficient directed evolution without retraining the model and is specially useful when the tested variants are very few.
+```bash
+python train_model.py --dataset Robin --split_method random --model_output_path Model/
 ```
 
 ## License
@@ -198,4 +166,4 @@ No Commercial use of either the model nor generated data, details to be found in
 
 ## Acknowledgements
 
-Our work builds upon [AIDO.RNA](https://github.com/genbio-ai/AIDO), [RhoDesign](https://github.com/ml4bio/RhoDesign) [RhoFold](https://github.com/ml4bio/RhoFold) Thanks for their excellent work and open-source contributions.
+Our work builds upon [AIDO.RNA(1.6B)](https://github.com/genbio-ai/AIDO),[RiNALMo](https://github.com/lbcb-sci/RiNALMo),[RNAFM](https://github.com/ml4bio/RNA-FM),[RNAMSM](https://pmc.ncbi.nlm.nih.gov/articles/PMC9477273/),[Evo 1](https://hariboss.pasteur.cloud/),[Nucleotide Transformer](https://hariboss.pasteur.cloud/),[Grover](https://hariboss.pasteur.cloud/),[GENA](https://hariboss.pasteur.cloud/) ,[RhoDesign](https://github.com/ml4bio/RhoDesign),[RhoFold](https://github.com/ml4bio/RhoFold)Thanks for their excellent work and open-source contributions.
