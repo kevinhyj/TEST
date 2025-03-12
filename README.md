@@ -6,15 +6,16 @@
 
 ## Overview
 
-🚀 We introduce RILLIE, a general RNA foundation model that integrates sequence and structure information to evolve RNA in a zero-shot fashion. RILLIE integrates a large language model with an inverse folding model can generate functional RNA sequences aligning with natural evolutionary patterns at the sequence level while preserving the structural integrity of key functional regions. Using RILLIE, we successfully evolved two engineered RNA aptamers, Broccoli and Pepper, with a high success rate, low sequence similarity, improved binding affinity and fluorescence in live cell.
+🚀 We introduce RILLIE, a general RNA foundation model that integrate sequence and structure information to evolve RNA in a zero-shot fashion. RILLIE integrating a large language model with an inverse folding model can generate functional RNA sequences aligning with natural evolutionary patterns at the sequence level while preserving the structural integrity of key functional regions. Using RILLIE, we successfully evolved two engineered RNA aptamers, Broccoli and Pepper, with a high success rate, low sequence similarity, improved binding affinity and fluorescence in live cell.
 
 ![RILLIE Overview](./image/03.png)
 
 ## 🗂 Contents
 
 - [Installation](#installation)
-- [Data Preparation](#data-preparation)
+- [Benchmark](#Benchmark)
   - [Dataset Description](#dataset-description)
+  - [Model Description](#model-description)
   - [Generate RNA Structure](#generate-rna-structure)
   - [Data Processing](#data-processing)
   - [Dataset Download](#dataset-download)
@@ -27,7 +28,7 @@
 - [Acknowledgements](#acknowledgements)
 
 ## Installation
-### If you prefer a faster setup, you can use the provided gernabind.yaml file:
+### If you prefer a faster setup, you can use the provided RILLIE.yaml file:
 ```bash
 
 conda env create -f RILLIE.yaml -y
@@ -68,11 +69,49 @@ pip install --upgrade pip setuptools
 ```
 -->
 
-## Data Preparation
+## Benchmark
 ### Dataset Description
-Refer to the following guides for setting up datasets:
-- RNA-Small Molecule Screening datasets: [Robin](https://pubmed.ncbi.nlm.nih.gov/36584293/) and [Biosensor](https://pmc.ncbi.nlm.nih.gov/articles/PMC9477273/)
-- RNA-Ligand Complex Structure datasets: [Hariboss](https://hariboss.pasteur.cloud/)
+We collected 6 ncRNA DMS datasets including tRNA, RNA aptamer and ribozyme from previous papers or private data:
+- tRNA datasets:
+  
+   [Pair-tRNA](https://www.nature.com/articles/s41586-018-0170-7)
+
+   [tRNA](http://genesdev.cshlp.org/lookup/doi/10.1101/gad.245936.114)
+- RNA aptamer datasets:
+
+   [Pepper](https://www.nature.com/articles/s41587-019-0249-1)
+
+   [Clivia](https://www.nature.com/articles/s41592-023-01997-7)
+
+    [Okra](https://www.nature.com/articles/s41589-024-01629-x)
+- ribozyme datasets:
+
+   [Glms](https://www.nature.com/articles/s41467-020-15540-1)
+### Model Description
+Our benchmark includes following models:
+- RNA language models:
+
+  [AIDO.RNA(1.6B)](https://github.com/genbio-ai/AIDO)
+
+  [RiNALMo](https://github.com/lbcb-sci/RiNALMo)
+
+  [RNAFM](https://github.com/ml4bio/RNA-FM)
+
+  [RNAMSM](https://pmc.ncbi.nlm.nih.gov/articles/PMC9477273/)
+
+- DNA language models:
+
+  [Evo 1](https://hariboss.pasteur.cloud/)
+
+  [Nucleotide Transformer](https://hariboss.pasteur.cloud/)
+
+  [Grover](https://hariboss.pasteur.cloud/)
+
+  [GENA](https://hariboss.pasteur.cloud/)
+
+- RNA inverse-folding models:
+  
+  [RhoDesign](https://github.com/ml4bio/RhoDesign)
 
 ### Generate RNA Structure
 We use [RhoFold+](https://github.com/ml4bio/RhoFold) to generate RNA 3D Structure and [RNAfold](https://github.com/ViennaRNA/ViennaRNA/releases) (version: 2.5.1) to generate RNA 2D structure.
