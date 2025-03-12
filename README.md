@@ -8,7 +8,7 @@
 
 🚀 We introduce RILLIE, a general RNA foundation model that integrates sequence and structure information to evolve RNA in a zero-shot fashion. RILLIE integrates a large language model with an inverse folding model can generate functional RNA sequences aligning with natural evolutionary patterns at the sequence level while preserving the structural integrity of key functional regions. Using RILLIE, we successfully evolved two engineered RNA aptamers, Broccoli and Pepper, with a high success rate, low sequence similarity, improved binding affinity and fluorescence in live cell.
 
-![RILLIE Overview](./image/)
+![RILLIE Overview](./image/03.png)
 
 ## 🗂 Contents
 
@@ -30,34 +30,35 @@
 ### If you prefer a faster setup, you can use the provided gernabind.yaml file:
 ```bash
 
-conda env create -f gernabind.yaml -y
-conda activate gernabind
+conda env create -f RILLIE.yaml -y
+conda activate RILLIE
 
 ```
 
 ### You can also install the environment either by following the step-by-step instructions below.
 ```bash
 # Create a conda environment
-conda create -y -n gernabind python=3.8
-conda activate gernabind
+conda create -y -n RILLIE python=3.9
+conda activate RILLIE
 
-#conda install pytorch==2.0.1 torchvision==0.15.2 pytorch-cuda=12.2 -c pytorch -c nvidia
-pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0
+# Install PyTorch and CUDA dependencies
+#conda install pytorch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install torch==2.3.0+cu121 torchvision==0.18.0+cu121 torchaudio==2.3.0+cu121
 
-# Install other dependencies 
+# Install other dependencies
 pip install rna-fm==0.2.2
-pip install ml_collections==0.1.1
+pip install ml-collections==0.1.1
 pip install simtk==0.1.0
 pip install openmm==8.1.1
 pip install torchdrug==0.2.1
-pip install torch_geometric==2.4.0
+pip install torch-geometric==2.5.3
 pip install equiformer-pytorch
-pip install edl_pytorch==0.0.2
-pip install rdkit==2023.9.5
-pip install biopython==1.79
-pip install pandas==1.5.3
-pip install scikit-learn==1.2.2
+pip install rdkit-pypi==2021.3.4
+pip install biopython==1.84
+pip install pandas==2.2.2
+pip install scikit-learn==1.5.1
 pip install prody==2.4.1
+
 ```
 
 <!--```bash
