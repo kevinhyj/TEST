@@ -117,32 +117,51 @@ We use [RhoFold](https://github.com/ml4bio/RhoFold) and [AlphaFold3](https://git
 
 We use [Chai](https://github.com/chaidiscovery/chai-lab) to generate RNA 2D structure (as the input of RILLIE).
 
-### Data Processing
-You can process data through the following steps:
-```bash
-python data_utils/process_data.py --fasta example/a.fasta --smile example/mol.txt --RhoFold_path your_RhoFold_project_path --RhoFold_weight RhoFold_model_weight_path
-```
-And the processed data will be saved in ./data folder as "new_data.pkl" file.
 
-### Dataset Download
-We process the processed data with Robin & Biosensor dataset. You can download the processed data from [Zenodo](https://zenodo.org/records/14808549).
+### Zero-shot ncRNA fitness prediction
+The average spearman and pearson correlations across 6 datasets can be visualized through following command:
+```bash
+python ./RILLIE/benchmark/ncRNA_fitness_prediction_average.py
+```
+Spearman corelations are visualized as follows:
+
+<img src="/Users/hyj/Documents/GitHub/RILLIE/image/ncRNA_fitness_prediction_aver.png" alt="average" style="clip-path: inset(0% 0% 0% 0%); width:500px;">
+
+The specific spearman and pearson correlations across 6 datasets can be visualized through following command:
+```bash
+python ./RILLIE/benchmark/ncRNA_fitness_prediction_all.py
+```
+Spearman corelations are visualized as follows:
+
+<div style="width:1000px; height:300px; overflow:hidden;">
+<img src="/Users/hyj/Documents/GitHub/RILLIE/image/ncRNA_fitness_prediction_specific.png" alt="average" style="clip-path: inset(0% 0% 0% 0%); width:1000px;">
+</div>
+
+### High-fitness sensitivity analysis
+```bash
+python ./RILLIE/benchmark/ncRNA_fitness_prediction_all.py
+```
+Spearman corelations are visualized as follows:
+
+![sensitivity_analysis](./image/sensitivity_analysis.png)
+
+<!--### Dataset Download
+ You can download the benchmark data from [Zenodo](https://zenodo.org/records/14808549).-->
 
 ## Using RILLIE
 
 ### CheckPoints
-Download the model weights and put into the "Model" folder, which contains the model checkpoint. You can direct run the scripts in ./Model folder to ger the model weights.
+You can download the model checkpoint from [Google Drive link](https://drive.google.com/drive/folders/1H3Itu6TTfaVErPH50Ly7rmQDxElH3JEz?usp=sharing).
 
-```bash
-bash Model/get_weights.sh
-```
+Then, place the downloaded data into the `./RILLIE/model/IFM/checkpoint` directory.
 
 ### General RNA Evolution
-Otherwise, you can also use our model to get RNA target binding sites prediction.
-You can run the file below, so that you can get the RNA_binding.csv about RNA.
+You can score the lod-likelihood of sequences using following command:
 
 ```bash
 python inference_binding_site.py
 ```
+
 ### Multi-Round Evolution (Optional)
 Based on the wet-lab testing result, we can discarding harmful mutations to increase the success rate, while introducing new mutations to help direct evolution escape local optima and discover global optima.  This approach enables efficient directed evolution without retraining the model and is specially useful when the tested variants are very few.
 ```bash
