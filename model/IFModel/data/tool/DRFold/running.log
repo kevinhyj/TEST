@@ -1,0 +1,1 @@
+/home/liyangum/projects/RNA/DRfold/bin/PETfold/bin/PETfold -f /home/zaitpub04/hyj/RhoFold/clivia.fasta -r /home/zaitpub04/hyj/DRFold/seq_ss_pet.petfoldrr >/home/zaitpub04/hyj/DRFold/seq_ss_pet.petfold

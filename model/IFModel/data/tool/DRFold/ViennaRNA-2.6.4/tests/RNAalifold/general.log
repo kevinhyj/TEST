@@ -1,0 +1,3 @@
+../config/tap-driver.sh: line 143: ./RNAalifold/general: Permission denied
+ERROR: RNAalifold/general - missing test plan
+ERROR: RNAalifold/general - exited with status 126

@@ -1,0 +1,77 @@
+===========================================
+   ViennaRNA 2.6.4: tests/test-suite.log
+===========================================
+
+# TOTAL: 356
+# PASS:  338
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 18
+
+.. contents:: :depth: 2
+
+ERROR: RNAfold/general
+======================
+
+../config/tap-driver.sh: line 143: ./RNAfold/general: Permission denied
+ERROR: RNAfold/general - missing test plan
+ERROR: RNAfold/general - exited with status 126
+
+ERROR: RNAfold/partfunc
+=======================
+
+../config/tap-driver.sh: line 143: ./RNAfold/partfunc: Permission denied
+ERROR: RNAfold/partfunc - missing test plan
+ERROR: RNAfold/partfunc - exited with status 126
+
+ERROR: RNAfold/special
+======================
+
+../config/tap-driver.sh: line 143: ./RNAfold/special: Permission denied
+ERROR: RNAfold/special - missing test plan
+ERROR: RNAfold/special - exited with status 126
+
+ERROR: RNAfold/long
+===================
+
+../config/tap-driver.sh: line 143: ./RNAfold/long: Permission denied
+ERROR: RNAfold/long - missing test plan
+ERROR: RNAfold/long - exited with status 126
+
+ERROR: RNAcofold/general
+========================
+
+../config/tap-driver.sh: line 143: ./RNAcofold/general: Permission denied
+ERROR: RNAcofold/general - missing test plan
+ERROR: RNAcofold/general - exited with status 126
+
+ERROR: RNAcofold/partfunc
+=========================
+
+../config/tap-driver.sh: line 143: ./RNAcofold/partfunc: Permission denied
+ERROR: RNAcofold/partfunc - missing test plan
+ERROR: RNAcofold/partfunc - exited with status 126
+
+ERROR: RNAalifold/general
+=========================
+
+../config/tap-driver.sh: line 143: ./RNAalifold/general: Permission denied
+ERROR: RNAalifold/general - missing test plan
+ERROR: RNAalifold/general - exited with status 126
+
+ERROR: RNAalifold/partfunc
+==========================
+
+../config/tap-driver.sh: line 143: ./RNAalifold/partfunc: Permission denied
+ERROR: RNAalifold/partfunc - missing test plan
+ERROR: RNAalifold/partfunc - exited with status 126
+
+ERROR: RNAalifold/special
+=========================
+
+../config/tap-driver.sh: line 143: ./RNAalifold/special: Permission denied
+ERROR: RNAalifold/special - missing test plan
+ERROR: RNAalifold/special - exited with status 126
+

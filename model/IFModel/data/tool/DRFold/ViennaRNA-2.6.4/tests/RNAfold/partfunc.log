@@ -1,0 +1,3 @@
+../config/tap-driver.sh: line 143: ./RNAfold/partfunc: Permission denied
+ERROR: RNAfold/partfunc - missing test plan
+ERROR: RNAfold/partfunc - exited with status 126

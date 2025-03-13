@@ -1,0 +1,14 @@
+/home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/PETfold/bin/PETfold -f /home/zaitpub04/hyj/RhoDesign/RhoDesign/data/fasta/clivia.fasta -r /home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/clivia_data/seq_ss_pet.petfoldrr >/home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/clivia_data/seq_ss_pet.petfold
+unknown ss state s 0
+steps: 10
+/home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/PETfold/bin/PETfold -f /home/zaitpub04/hyj/RhoDesign/RhoDesign/data/fasta/clivia.fasta -r /home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/clivia_data/seq_ss_pet.petfoldrr >/home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/clivia_data/seq_ss_pet.petfold
+unknown ss state s 0
+steps: 10
+/home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/PETfold/bin/PETfold -f /home/zaitpub04/hyj/RhoDesign/RhoDesign/data/fasta/seq.fasta -r /home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/clivia_data/seq_ss_pet.petfoldrr >/home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/clivia_data/seq_ss_pet.petfold
+steps: 10
+/home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/PETfold/bin/PETfold -f /home/zaitpub04/hyj/RhoDesign/RhoDesign/data/fasta/clivia.fasta -r /home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/clivia_data/seq_ss_pet.petfoldrr >/home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/clivia_data/seq_ss_pet.petfold
+unknown ss state s 0
+steps: 10
+/home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/PETfold/bin/PETfold -f /home/zaitpub04/hyj/RhoDesign/RhoDesign/data/fasta/clivia.fasta -r /home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/clivia_data/seq_ss_pet.petfoldrr >/home/zaitpub04/hyj/RhoDesign/RhoDesign/data/tool/DRFold/clivia_data/seq_ss_pet.petfold
+unknown ss state 0 0
+steps: 10
