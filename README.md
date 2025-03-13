@@ -125,7 +125,7 @@ python ./RILLIE/utils/ncRNA_fitness_prediction_average.py
 ```
 Spearman corelations are visualized as follows:
 
-<img src="./image/ncRNA_fitness_prediction_aver.png" alt="average" style="clip-path: inset(0% 0% 0% 0%); width:500px;">
+<img src="/Users/hyj/Documents/GitHub/RILLIE/image/ncRNA_fitness_prediction_aver.png" alt="average" style="clip-path: inset(0% 0% 0% 0%); width:500px;">
 
 The specific spearman and pearson correlations across 6 datasets can be visualized through following command:
 ```bash
@@ -134,7 +134,7 @@ python ./RILLIE/utils/ncRNA_fitness_prediction_all.py
 Spearman corelations are visualized as follows:
 
 <div style="width:1000px; height:300px; overflow:hidden;">
-<img src="./image/ncRNA_fitness_prediction_specific.png" alt="average" style="clip-path: inset(0% 0% 0% 0%); width:1000px;">
+<img src="/Users/hyj/Documents/GitHub/RILLIE/image/ncRNA_fitness_prediction_specific.png" alt="average" style="clip-path: inset(0% 0% 0% 0%); width:1000px;">
 </div>
 
 ### High-fitness sensitivity analysis
@@ -185,6 +185,15 @@ python ./RILLIE/utils/wet_data_analysis.py
 Spearman corelations are visualized as follows:
 
 ![wet_data_analysis](./image/broccoli_analysis.png)
+
+#### 2、Discard harmful mutations to increase the success rate
+The mutations in dark color indicates harmful mutations.
+
+#### 3、Introduce new mutations and visualize the mutational distribution
+
+```bash
+python ./RILLIE/utils/wet_data_analysis.py
+```
 
 ## License
 No Commercial use of either the model nor generated data, details to be found in license.md.
